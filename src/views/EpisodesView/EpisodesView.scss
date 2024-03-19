@@ -1,0 +1,84 @@
+@use '../../assets/styles/colors';
+@use '../../assets/styles/mixins';
+
+.Episodes-view {
+  &__header {
+    padding: 20px 0;
+    color: colors.$color-dark-blue;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__list {
+    &-container {
+      &-table {
+        &--body {
+          &-row {
+            &-actions {
+              &--link {
+                text-decoration: none;
+                color: colors.$color-dark-blue;
+                border: 1px solid colors.$color-dark-blue;
+                padding: 5px 10px;
+
+                &:hover {
+                  background-color: colors.$color-dark-blue;
+                  color: colors.$color-white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__pagination {
+    margin-bottom: 50px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @include mixins.mobile {
+      flex-direction: column;
+    }
+
+    &-text {
+      color: colors.$color-text;
+
+      @include mixins.mobile {
+        padding-bottom: 15px;
+      }
+
+      &--bold {
+        font-weight: bold;
+      }
+    }
+
+    &-action{
+      &--btn {
+        padding: 10px 25px;
+        color: colors.$color-dark-blue;
+        border: 1px solid colors.$color-dark-blue;
+        background-color: transparent;
+        margin-left: 20px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: colors.$color-dark-blue;
+          color: colors.$color-white;
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+
+          &:hover {
+            background-color: transparent;
+            color: colors.$color-dark-blue;
+          }
+        }
+      }
+    }
+  }
+}

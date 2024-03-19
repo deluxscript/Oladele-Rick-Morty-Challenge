@@ -1,0 +1,63 @@
+@use '../../assets/styles/colors';
+
+.Profile-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+
+  &__header {
+    &-img {
+      position: relative;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+
+    &-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: -3rem;
+      color: colors.$color-dark-brown;
+    }
+  }
+
+  &__content {
+    &-info {
+      padding: 10px 0;
+
+      &--species, &--origin, &--location {
+        color: colors.$color-text;
+        font-size: 13px;
+      }
+    }
+
+    &-action {
+      margin: 10px 0;
+
+      &-link {
+        cursor: pointer;
+        text-decoration: none;
+        border: 1px solid colors.$color-dark-blue;
+        border-radius: 5px;
+        background: transparent;
+        color: colors.$color-dark-blue;
+        font-weight: 600;
+        padding: 5px 20px;
+
+        &:hover {
+          background: colors.$color-dark-blue;
+          color: colors.$color-white;
+        }
+      }
+    }
+  }
+}

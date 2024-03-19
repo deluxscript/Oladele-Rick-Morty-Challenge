@@ -1,0 +1,44 @@
+@use '../../assets/styles/colors';
+@use '../../assets/styles/mixins';
+
+.Episode-view {
+  padding: 40px 50px;
+  background-color: colors.$color-white;
+  min-height: calc(100vh - 100px);
+
+  @include mixins.mobile {
+    padding: 40px 15px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__characters {
+    padding: 30px 0;
+
+    &-title {
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+
+    &-list {
+      list-style: none;
+
+      &-item {
+        padding: 5px 0;
+
+        &--link {
+          color: colors.$color-text;
+          text-decoration: none;
+
+          &:hover {
+            color: colors.$color-dark-blue;
+          }
+        }
+      }
+    }
+  }
+}

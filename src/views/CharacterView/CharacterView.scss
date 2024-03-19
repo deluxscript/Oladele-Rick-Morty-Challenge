@@ -1,0 +1,134 @@
+@use '../../assets/styles/colors';
+@use '../../assets/styles/mixins';
+
+.Character-view {
+  padding: 40px 50px;
+  background-color: colors.$color-white;
+  min-height: calc(100vh - 200px);
+
+  @include mixins.mobile {
+    padding: 40px 15px;
+  }
+
+  &__header {
+    border-bottom: 1px solid colors.$color-border-line;
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+
+    &-media {
+      width: auto;
+      margin-right: 10px;
+      border-radius: 100%;
+      background-color: colors.$color-border-line;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      &-img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+
+      &--name {
+        font-size: 20px;
+      }
+
+      &--status {
+        font-size: 14px;
+        color: colors.$color-text;
+
+        &-active {
+          background-color: colors.$color-green;
+          color: colors.$color-white;
+          padding: 2px 5px;
+          font-size: 11px;
+          border-radius: 10px;
+        }
+
+        &-inactive {
+          background-color: colors.$color-red;
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin: 40px 0;
+
+    &-info {
+      padding-bottom: 20px;
+
+      &-title {
+        font-size: 20px;
+        padding-bottom: 10px;
+      }
+
+      &-data {
+        &--gender, &--species, &--location {
+          color: colors.$color-text;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-episodes {
+      &-accordion {
+        box-shadow: none;
+        border: 1px solid colors.$color-border-line;
+
+        &--summary {
+          border-bottom: 1px solid colors.$color-border-line !important;
+
+          &-typo {
+            font-weight: bold !important;
+
+            &-value {
+              padding: 5px 8px;
+              background-color: colors.$color-flat-grey;
+              border-radius: 100%;
+            }
+          }
+        }
+
+        &--list {
+          display: grid;
+          row-gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+.Episode-card {
+  padding: 15px;
+  border: 1px solid colors.$color-border-line;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+
+  &__section {
+    &-text {
+      font-weight: bold;
+      font-size: 14px;
+
+      &--link {
+        color: colors.$color-black;
+        text-decoration: none;
+
+        &:hover {
+          color: colors.$color-dark-blue;
+        }
+      }
+    }
+    &-value {
+      font-size: 12px;
+    }
+  }
+}
